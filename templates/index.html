@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>mac用からwin用に変換（flaskを起動するexe）</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <div class="drop-area">
+            <input type="file" name="py_file" accept=".py">
+        </div>
+        <p></p>
+        <button type="submit" class="btn" onclick="OnButtonClick();">送信</button>
+    </form>
+    {% if not form_flag %}
+        <div id="js_output"></div>
+    {% endif %}
+
+    <p><br></p>
+
+    {% if form_flag %}
+        <div class="button019">
+            <a href="{{ url_for('win_py_download') }}">一括ダウンロード</a>
+        </div>
+    {% endif %}
+{% endblock %}

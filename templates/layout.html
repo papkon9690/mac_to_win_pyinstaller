@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exeファイル化の補助サイト</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/btn.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/file_drop_drag.css') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            function OnButtonClick() {
+                target = document.getElementById("js_output");
+                target.innerHTML = "<br><h3>実行中〜少々お待ちください</h3>";
+            }
+        </script>
+    </head>
+
+    <body>
+        <header class="header-title">
+            <a href="{{ url_for('index') }}">exeファイル化の補助サイト</a>
+        </header>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <p><br><br></p>
+    </body>
+
+</html>
